@@ -1,3 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&display=swap');
+
+body {
+    background-color: slategray;
+    color: rgb(220, 229, 241);
+    font-family:'JetBrains Mono', monospace;
+}
+
+#app-name {
+    text-align: center;
+}
+
 #message-log {
-    background-color: lightcyan;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px; 
+    background-color: lightslategray;
+}
+
+#session-date {
+    text-align: center;
+}
+
+.computer-message {
+    color: rgb(228, 173, 152);
+}
+
+#user-input {
+    margin-top: 10px;
+    font-family:'JetBrains Mono', monospace;
+    color: rgb(220, 229, 241);
+    width: 40%;
+    height: 26px;
+    border: none;
+    background-color: rgb(139, 148, 158);
+}
+
+#submit {
+    color: rgb(220, 229, 241);
+    height: 26px;
+    border-color: transparent;
+    font-family:'JetBrains Mono', monospace;
+    background-color: rgb(139, 148, 158);
+}
+
+footer {
+    font-size: 13px;
 }
