@@ -1,4 +1,9 @@
-let form = document.getElementById("new-message");
+
+
+
+//Comment out previous js to add jquery version
+
+/*let form = document.getElementById("new-message");
 form.addEventListener("submit", function(event) {
     
     event.preventDefault();
@@ -29,5 +34,5 @@ form.addEventListener("submit", function(event) {
     messageLog.append(computerTag);
     
     form.reset()
-})
+})*/
 
