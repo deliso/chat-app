@@ -12,11 +12,11 @@
   <main>
     <!-- App name -->
     <div id="app-name"><h1>Odyssey &#127761</h1></div>
+    <!-- Session date -->
+    <div id="session-date">
+    </div>
     <!-- Message log -->
       <div id="message-log">
-        <!-- Session date -->
-        <div id="session-date">
-        </div>
         <!-- Welcome message -->
         <div id="welcome-message" class="computer-message"></div>
         <!-- Other messages appended here -->
@@ -24,10 +24,12 @@
       </div>
 
     <!-- User messages form -->
-    <form id="user-input-container" action="">
-      <input type="text" name="user-input" id="user-input"></input>
-      <input type="submit" value="Declaim" name="submit" id="submit">
-    </form>
+    <div class="user-input-wrapper">
+      <form id="user-form" action="">
+        <input type="text" name="user-input" id="user-input"></input>
+        <input type="submit" value="Send" name="submit" id="submit">
+      </form>
+    </div>
   </main>
   <!-- Footer -->
   <footer>

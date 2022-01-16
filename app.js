@@ -10,7 +10,7 @@ sessionDate.text(`--${monthName} ${currentDay}, ${currentYear}--`);
 $("#session-date").append(sessionDate);
 
 //Show welcome message from the computer (pending delay and time)
-let welcomeMsg = $("<p>");
+let welcomeMsg = $("<div>");
 welcomeMsg.html("<strong>Homer:</strong> Tell me, O Muse, of the man of many devices, who wandered full many ways after he had sacked the sacred citadel of Troy."
 );
 setTimeout(function() { 
@@ -45,6 +45,7 @@ $("form").on("submit",function (event) {
     
     //Prevent the page from refreshing on submit
     event.preventDefault();
+
     
     //Find input value (message) and save it into the userInput variable
     let $userInput = $(this).find("[id=user-input]")
@@ -55,33 +56,36 @@ $("form").on("submit",function (event) {
     let minutes = (timeStamp.getMinutes()<10?'0':'') + timeStamp.getMinutes();
     let time = timeStamp.getHours() + ":" + minutes + "h"; //Uses GMT+1
     
-    //Add new paragraph (before end of message log). Pending message log div containing username, message and time.
-    let userText = `<strong>Muse:</strong> ${userInput} || ${time}`;
-    let newUserMsg = $("<div>")
-        .addClass("user-message")
-        .html(userText);
-    $("#end-of-messages-wrapper").before($(newUserMsg)); //USAR PREPEND
-    //After new user message, scroll to the end of the message log
-    $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top)
+    //Prevent sending empty messages
+    if ($userInput.val() !== "") {
     
-    // Reset form to blank
-    $(this).trigger("reset");
-
-    //Display random message from the computer
-    let computerRandomText = generateRandomSentence();
-    let computerText= `<strong>Homer:</strong> ${computerRandomText} || ${time}`;
-    let newComputerMsg = $("<div>")
-        .addClass("computer-message")
-        .html(computerText);
-    
-    //Delay the computer's message by 2 seconds (pending 3 dot delay animation)
-    setTimeout(function() { 
-        $("#end-of-messages-wrapper").before($(newComputerMsg)) 
-    //After new computer message, scroll to the end of the message log
+        //Add new paragraph (before end of message log). Pending message log div containing username, message and time.
+        let userText = `<strong>Muse:</strong> ${userInput} || ${time}`;
+        let newUserMsg = $("<div>")
+            .addClass("user-message")
+            .html(userText);
+        $("#end-of-messages-wrapper").before($(newUserMsg)); 
+        //After new user message, scroll to the end of the message log
         $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top)
-        }, 1000);
-    
+        
+        // Reset form to blank
+        $(this).trigger("reset");
 
+        //Display random message from the computer
+        let computerRandomText = generateRandomSentence();
+        let computerText= `<strong>Homer:</strong> ${computerRandomText} || ${time}`;
+        let newComputerMsg = $("<div>")
+            .addClass("computer-message")
+            .html(computerText);
+        
+        //Delay the computer's message by 2 seconds (pending 3 dot delay animation)
+        setTimeout(function() { 
+            $("#end-of-messages-wrapper").before($(newComputerMsg)) 
+        //After new computer message, scroll to the end of the message log
+            $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top)
+            }, 1000);
+        
+        }
     
     //General scroll function (in progress) --> scrollToMessageElement($messageElement)
 
