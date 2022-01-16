@@ -13,7 +13,7 @@ body {
     text-align: center;
 }
 
-#message-log {
+#message-log, ::-webkit-scrollbar{
     /*background-color: green;*/
     padding-top: 5px;
     margin-left: 10%;
@@ -21,6 +21,11 @@ body {
     padding-bottom: 15px; 
     background-color: lightslategray;
     border-radius: 10px;
+    overflow: hidden;
+    overflow:auto;
+    display: block;
+    max-height: 500px;
+    position: relative;
 }
 
 #session-date {
@@ -35,8 +40,10 @@ body {
     border-radius: 10px;
     margin-top: 15px;
     margin-left: 15px;
-    margin-right: 15px;
     padding: 5px;
+    margin-right:15px;
+    /*width: fit-content;*/
+    
 }
 
 .user-message {
@@ -47,6 +54,7 @@ body {
     margin-left: 15px;
     margin-right: 15px;
     padding: 5px;
+    /*width: fit-content;*/
 }
 
 #user-input {
@@ -62,25 +70,30 @@ body {
     background-color: lightslategray;;
     margin-left: 10%;
     outline: none;
+    overflow: auto;
+    display: block;
 }
 
 #submit {
     /*background-color: hotpink;*/
     color: rgb(220, 229, 241);
     margin-top: 10px;
-    height: 30px;
+    height: 35px;
     border-color: transparent;
     border-radius: 10px;
     font-family:'JetBrains Mono', monospace;
-    background-color: lightslategray;;
+    background-color: lightslategray;
+    overflow:auto;
 }
 
 footer {
     /*background-color: darkblue;*/
     position:fixed;
+    margin-top: 15px;
     bottom:0;
     width: 100%;
     font-size: 13px;
     text-align: center;
+    display: block;
 }
 

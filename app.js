@@ -15,7 +15,7 @@ welcomeMsg.html("<strong>Homer:</strong> Tell me, O Muse, of the man of many dev
 );
 setTimeout(function() { 
     $("#welcome-message").append(welcomeMsg);
-    }, 2000);
+    }, 1000);
 
 
 //Generate random sentence (https://stackoverflow.com/questions/33160766/generate-random-sentences-from-an-array-javascript)
@@ -55,12 +55,14 @@ $("form").on("submit",function (event) {
     let minutes = (timeStamp.getMinutes()<10?'0':'') + timeStamp.getMinutes();
     let time = timeStamp.getHours() + ":" + minutes + "h"; //Uses GMT+1
     
-    //Append new paragraph to the message log div containing username (pending), message and time.
+    //Add new paragraph (before end of message log). Pending message log div containing username, message and time.
     let userText = `<strong>Muse:</strong> ${userInput} || ${time}`;
     let newUserMsg = $("<div>")
         .addClass("user-message")
         .html(userText);
-    $("#message-log").append(newUserMsg);
+    $("#end-of-messages-wrapper").before($(newUserMsg)); //USAR PREPEND
+    //After new user message, scroll to the end of the message log
+    $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top)
     
     // Reset form to blank
     $(this).trigger("reset");
@@ -74,45 +76,13 @@ $("form").on("submit",function (event) {
     
     //Delay the computer's message by 2 seconds (pending 3 dot delay animation)
     setTimeout(function() { 
-        $("#message-log").append(newComputerMsg);
-        }, 2000);
+        $("#end-of-messages-wrapper").before($(newComputerMsg)) 
+    //After new computer message, scroll to the end of the message log
+        $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top)
+        }, 1000);
+    
 
-})
+    
+    //General scroll function (in progress) --> scrollToMessageElement($messageElement)
 
-
-
-//Comment out previous js to add jquery version
-
-/*let form = document.getElementById("new-message");
-form.addEventListener("submit", function(event) {
-    
-    event.preventDefault();
-    
-    let userInput = document.getElementById("user-input").value;
-    console.log(userInput);
-    
-    let userTag = document.createElement("p")
-    
-    let currentDate = new Date();
-    let timeHours = currentDate.getHours();
-    let timeMinutes = currentDate.getMinutes();
-
-    let userText = document.createTextNode(`User: ${userInput} | ${timeHours}:${timeMinutes}`);
-    
-    userTag.appendChild(userText);
-    
-    let messageLog = document.getElementById("message-log");
-    
-    messageLog.append(userTag);
-    
-    let computerTag = document.createElement("p")
-    
-    let computerText = document.createTextNode("Computer: Very nice")
-    
-    computerTag.appendChild(computerText);
-    
-    messageLog.append(computerTag);
-    
-    form.reset()
-})*/
-
+});
