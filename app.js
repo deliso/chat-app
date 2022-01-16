@@ -40,8 +40,6 @@ function generateRandomSentence () {
     
 }
 
-console.log(generateRandomSentence());
-
 //Actions on submit
 $("form").on("submit",function (event) {
     
@@ -59,8 +57,9 @@ $("form").on("submit",function (event) {
     
     //Append new paragraph to the message log div containing username (pending), message and time.
     let userText = `<strong>Muse:</strong> ${userInput} || ${time}`;
-    let newUserMsg = $("<p>");
-    newUserMsg.html(userText);
+    let newUserMsg = $("<div>")
+        .addClass("user-message")
+        .html(userText);
     $("#message-log").append(newUserMsg);
     
     // Reset form to blank
