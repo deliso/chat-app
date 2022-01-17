@@ -29,9 +29,19 @@ body {
     position: relative;
 }
 
-#session-date {
+.session-date {
     /*background-color: indianred;*/
     text-align: center;
+    background-color: rgba(184, 195, 207, 0.342);
+    color: rgba(106, 125, 143, 0.938);
+    border-radius: 15px;
+    height: 25px;
+    line-height: 30px;
+    width: fit-content;
+    position: relative;
+    margin-left: 45%;
+    padding: 5px;
+
 }
 
 .computer-message {
@@ -49,6 +59,18 @@ body {
     
 }
 
+.computer-timestamp {
+    background-color: rgb(184, 195, 207);
+    color: rgb(106, 125, 143);
+    border-radius: 15px;
+    margin-top: -5px;
+    margin-left: 20px;
+    padding: 5px;
+    margin-right:10%;
+    width:fit-content;
+    font-size: 10px;
+}
+
 .user-message {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -60,6 +82,19 @@ body {
     margin-right: 15px;
     padding: 10px;
     width: fit-content;
+    align-items: right;
+}
+
+.user-timestamp {
+    background-color: rgb(184, 195, 207);
+    color: rgb(106, 125, 143);
+    border-radius: 15px;
+    margin-top: -10px;
+    margin-left: auto;
+    margin-right: 20px;
+    padding: 5px;
+    width:fit-content;
+    font-size: 10px;
     align-items: right;
 }
 
@@ -97,6 +132,8 @@ body {
     border-radius: 10px;
     background-color:rgb(64, 158, 130);
 }
+
+/*https://www.w3schools.com/howto/howto_css_animate_buttons.asp*/
 
 #submit:hover {
     background-color: rgb(57, 145, 115);

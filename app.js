@@ -5,16 +5,25 @@ let currentYear = currentDate.getFullYear();
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 let monthName = month[currentDate.getMonth()];
 let currentDay = currentDate.getUTCDate() //Uses UTC (not GMT+1)
-let sessionDate = $("<p>");
-sessionDate.text(`--${monthName} ${currentDay}, ${currentYear}--`);
-$("#session-date").append(sessionDate);
+let sessionDate = $("<div>");
+sessionDate
+    .addClass("session-date")    
+    .html(`${monthName} ${currentDay}, ${currentYear}`);
+$("#message-log").prepend(sessionDate);
 
-//Show welcome message from the computer (pending delay and time)
+//Show welcome message from the computer
+let welcomeTimestamp = new Date($.now());
+    let welcomeMinutes = (welcomeTimestamp.getMinutes()<10?'0':'') + welcomeTimestamp.getMinutes(); //Pending attribution
+    let welcomeTime = welcomeTimestamp.getHours() + ":" + welcomeMinutes + "h"; //Uses GMT+1
 let welcomeMsg = $("<div>");
-welcomeMsg.html("<strong>Homer:</strong> Tell me, O Muse, of the man of many devices, who wandered full many ways after he had sacked the sacred citadel of Troy."
+let welcomeTimeMsg = $("<div>");
+welcomeMsg.html("Tell me, O Muse, of the man of many devices, who wandered full many ways after he had sacked the sacred citadel of Troy."
 );
+welcomeTimeMsg.html(welcomeTime);
+
 setTimeout(function() { 
     $("#welcome-message").append(welcomeMsg);
+    $("#welcome-timestamp").append(welcomeTimeMsg);
     }, 1000);
 
 
@@ -60,12 +69,15 @@ $("form").on("submit",function (event) {
     if ($userInput.val() !== "") {
     
         //Add new paragraph (before end of message log). Pending message log div containing username, message and time.
-        let userText = `<strong>Muse:</strong> ${userInput} || ${time}`;
         let newUserMsg = $("<div>")
             .addClass("user-message")
-            .html(userText);
-        $("#end-of-messages-wrapper").before($(newUserMsg)); 
-        //After new user message, scroll to the end of the message log
+            .html(userInput);
+        let newUserTime= $("<div>")
+            .addClass("user-timestamp")
+            .html(time);
+        $("#end-of-messages-wrapper").before($(newUserMsg));
+        $("#end-of-messages-wrapper").before($(newUserTime));
+        //After new user message, scroll to the end of the message log (https://stackoverflow.com/questions/2346011/how-do-i-scroll-to-an-element-within-an-overflowed-div)
         $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top)
         
         // Reset form to blank
@@ -73,14 +85,17 @@ $("form").on("submit",function (event) {
 
         //Display random message from the computer
         let computerRandomText = generateRandomSentence();
-        let computerText= `<strong>Homer:</strong> ${computerRandomText} || ${time}`;
         let newComputerMsg = $("<div>")
             .addClass("computer-message")
-            .html(computerText);
+            .html(computerRandomText);
+        let newComputerTime= $("<div>")
+            .addClass("computer-timestamp")
+            .html(time);
         
         //Delay the computer's message by 2 seconds (pending 3 dot delay animation)
         setTimeout(function() { 
-            $("#end-of-messages-wrapper").before($(newComputerMsg)) 
+            $("#end-of-messages-wrapper").before($(newComputerMsg))
+            $("#end-of-messages-wrapper").before($(newComputerTime)) 
         //After new computer message, scroll to the end of the message log
             $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top)
             }, 1000);
