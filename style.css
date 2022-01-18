@@ -3,7 +3,7 @@
 /*Pendiente añadir fallback font*/
 
 body {
-    background-color: slategray;
+    background-color: rgb(115, 129, 143);
     color: rgb(220, 229, 241);
     font-family:'JetBrains Mono', monospace;
     font-size: 13px;
@@ -12,6 +12,13 @@ body {
 #app-name {
     /*background-color: blue;*/
     text-align: center;
+}
+
+#profile-picture {
+    padding-left: 5px;
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
 }
 
 #computer-name {
@@ -25,18 +32,11 @@ body {
     margin-right: 10%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: rgb(90, 120, 148);
+    background-color: rgb(78, 107, 134);
     font-size: 15px;
 }
 
-img {
-    border-radius: 50%;
-    width: 4%;
-    height: 4%;
-}
-
 #message-log,::-webkit-scrollbar {
-    /*background-color: green;*/
     padding-top: 15px;
     margin-left: 10%;
     margin-right: 10%;
@@ -50,7 +50,6 @@ img {
 }
 
 #session-date-wrapper {
-    /*background-color: indianred;*/
     display: flex;
     justify-content: center;
     color: rgb(220, 229, 241);
@@ -60,7 +59,6 @@ img {
 }
 
 .computer-message {
-    /*background-color: lightyellow;*/
     background-color:rgb(90, 120, 148);
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -115,6 +113,7 @@ img {
 
 .user-input-wrapper {
     background-color: rgb(138, 154, 170);;
+    margin-top:-10px;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 20px;
@@ -140,14 +139,12 @@ img {
     flex-grow: 1;
     padding:15px;
     font-family:'JetBrains Mono', monospace;
-    color: rgb(106, 125, 143);
+    color: rgb(75, 100, 122);
     border-color: transparent;
     border-radius: 10px;
     background-color: rgb(184, 195, 207);
     outline:none;
 }
-
-
 
 #submit {
     font-family:'JetBrains Mono', monospace;
@@ -170,7 +167,6 @@ img {
 }
 
 footer {
-    /*background-color: darkblue;*/
     position:fixed;
     margin-top: 15px;
     bottom:0%;

@@ -55,10 +55,14 @@ $("form").on("submit",function (event) {
     //Prevent the page from refreshing on submit
     event.preventDefault();
 
-    
+    //Escape tags to avoid XSS (https://www.codegrepper.com/code-examples/javascript/jquery+escape+html+string)
+    function escapeHtml(str) {
+        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+ 
     //Find input value (message) and save it into the userInput variable
     let $userInput = $(this).find("[id=user-input]")
-    let userInput = $userInput.val();
+    let userInput = escapeHtml($userInput.val());
     
     //Get timestamp and parse hours and minutes
     let timeStamp = new Date($.now());
