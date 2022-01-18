@@ -98,7 +98,7 @@ $("form").on("submit",function (event) {
             $("#end-of-messages-wrapper").before($(newComputerTime)) 
         //After new computer message, scroll to the end of the message log
             $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top)
-            }, 1000);
+            }, 2000);
         
         }
     

@@ -14,6 +14,27 @@ body {
     text-align: center;
 }
 
+#computer-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(90, 120, 148);
+    font-size: 15px;
+}
+
+img {
+    border-radius: 50%;
+    width: 4%;
+    height: 4%;
+}
+
 #message-log,::-webkit-scrollbar {
     /*background-color: green;*/
     padding-top: 15px;
@@ -21,7 +42,6 @@ body {
     margin-right: 10%;
     padding-bottom: 15px; 
     background-color: rgb(138, 154, 170);
-    border-radius: 10px;
     overflow: auto;
     display: block;
     max-height: 450px;
@@ -33,7 +53,7 @@ body {
     /*background-color: indianred;*/
     display: flex;
     justify-content: center;
-    color: rgba(106, 125, 143, 0.938);
+    color: rgb(220, 229, 241);
     border-radius: 15px;
     padding: 5px;
 
@@ -41,7 +61,7 @@ body {
 
 .computer-message {
     /*background-color: lightyellow;*/
-    background-color:rgb(106, 125, 143);
+    background-color:rgb(90, 120, 148);
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -93,14 +113,24 @@ body {
     align-items: right;
 }
 
+.user-input-wrapper {
+    background-color: rgb(138, 154, 170);;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 20px;
+    position: relative;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+} 
+
 #user-form{
     display:flex;
     gap: 0.5rem;
     height: 30px;
-    width: 80%;
+    width: 96%;
     padding-top: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
     align-content:stretch;
     font-family:'JetBrains Mono', monospace;
 }
@@ -110,10 +140,10 @@ body {
     flex-grow: 1;
     padding:15px;
     font-family:'JetBrains Mono', monospace;
-    color: rgb(220, 229, 241);
+    color: rgb(106, 125, 143);
     border-color: transparent;
     border-radius: 10px;
-    background-color: rgb(138, 154, 170);
+    background-color: rgb(184, 195, 207);
     outline:none;
 }
 
