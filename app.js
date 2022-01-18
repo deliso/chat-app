@@ -4,7 +4,7 @@ let currentDate = new Date ($.now())
 let currentYear = currentDate.getFullYear();
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 let monthName = month[currentDate.getMonth()];
-let currentDay = currentDate.getUTCDate() //Uses UTC (not GMT+1)
+let currentDay = currentDate.getDate() 
 let sessionDate = $("<div>");
 sessionDate
     .addClass("session-date")    
@@ -14,7 +14,7 @@ $("#session-date-wrapper").append(sessionDate);
 //Show welcome message from the computer
 let welcomeTimestamp = new Date($.now());
     let welcomeMinutes = (welcomeTimestamp.getMinutes()<10?'0':'') + welcomeTimestamp.getMinutes(); //Pending attribution
-    let welcomeTime = welcomeTimestamp.getHours() + ":" + welcomeMinutes + "h"; //Uses GMT+1
+    let welcomeTime = welcomeTimestamp.getHours() + ":" + welcomeMinutes + "h"; 
 let welcomeMsg = $("<div>");
 let welcomeTimeMsg = $("<div>");
 welcomeMsg.html("Tell me, O Muse, of the man of many devices, who wandered full many ways after he had sacked the sacred citadel of Troy."
@@ -103,7 +103,7 @@ $("form").on("submit",function (event) {
         //After new computer message, scroll to the end of the message log
             $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top)
             }, 2000);
-        
+            
         }
     
     //General scroll function (in progress) --> scrollToMessageElement($messageElement)

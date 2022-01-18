@@ -50,10 +50,12 @@ body {
 }
 
 #session-date-wrapper {
+    background-color: rgb(138, 154, 170);
+    margin-left: 10%;
+    margin-right: 10%;
     display: flex;
     justify-content: center;
     color: rgb(220, 229, 241);
-    border-radius: 15px;
     padding: 5px;
 
 }
@@ -95,7 +97,9 @@ body {
     margin-right: 15px;
     padding: 10px;
     width: fit-content;
+    max-width: 500px;
     align-items: right;
+    word-wrap: break-word;
 }
 
 .user-timestamp {
