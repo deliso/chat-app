@@ -29,17 +29,12 @@ body {
     position: relative;
 }
 
-.session-date {
+#session-date-wrapper {
     /*background-color: indianred;*/
-    text-align: center;
-    background-color: rgba(184, 195, 207, 0.342);
+    display: flex;
+    justify-content: center;
     color: rgba(106, 125, 143, 0.938);
     border-radius: 15px;
-    height: 25px;
-    line-height: 30px;
-    width: fit-content;
-    position: relative;
-    margin-left: 45%;
     padding: 5px;
 
 }
@@ -89,7 +84,7 @@ body {
     background-color: rgb(184, 195, 207);
     color: rgb(106, 125, 143);
     border-radius: 15px;
-    margin-top: -10px;
+    margin-top: -5px;
     margin-left: auto;
     margin-right: 20px;
     padding: 5px;

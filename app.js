@@ -9,7 +9,7 @@ let sessionDate = $("<div>");
 sessionDate
     .addClass("session-date")    
     .html(`${monthName} ${currentDay}, ${currentYear}`);
-$("#message-log").prepend(sessionDate);
+$("#session-date-wrapper").append(sessionDate);
 
 //Show welcome message from the computer
 let welcomeTimestamp = new Date($.now());
@@ -66,7 +66,7 @@ $("form").on("submit",function (event) {
     let time = timeStamp.getHours() + ":" + minutes + "h"; //Uses GMT+1
     
     //Prevent sending empty messages
-    if ($userInput.val() !== "") {
+    if (($userInput.val().trim()) !== "") {
     
         //Add new paragraph (before end of message log). Pending message log div containing username, message and time.
         let newUserMsg = $("<div>")
