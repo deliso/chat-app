@@ -1,187 +1,241 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&display=swap');
 
-/*Pendiente añadir fallback font*/
-
 body {
-    background-color: rgb(115, 129, 143);
-    color: rgb(220, 229, 241);
+    /* Typographic */
     font-family:'JetBrains Mono', monospace;
     font-size: 13px;
+    color: rgb(220, 229, 241);
+    /* Visual */
+    background-color: rgb(115, 129, 143);
+
 }
 
 #app-name {
-    /*background-color: blue;*/
+    /* Positioning */
     text-align: center;
 }
 
 #profile-picture {
+    /* Positioning */
     padding-left: 5px;
-    text-align: center;
+    /* Box model */
     align-items: center;
-    font-size: 40px;
+    /* Typographic */
+    font-size: 30px;
+    text-align: center;
+
 }
 
 #computer-name {
+    /* Positioning */
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* Box model */
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 10%;
-    margin-right: 10%;
+    gap: 1rem; 
+    /* Typographic */
+    font-size: 15px;
+    /* Visual */
+    background-color: rgb(78, 107, 134);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: rgb(78, 107, 134);
-    font-size: 15px;
-}
-
-#message-log,::-webkit-scrollbar {
-    padding-top: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-bottom: 15px; 
-    background-color: rgb(138, 154, 170);
-    overflow: auto;
-    display: block;
-    max-height: 450px;
-    min-height: 450px;
-    position: relative;
 }
 
 #session-date-wrapper {
-    background-color: rgb(138, 154, 170);
+    /* Positioning */
     margin-left: 10%;
     margin-right: 10%;
+    padding: 5px;
+    /* Box model */
     display: flex;
     justify-content: center;
+    /* Typographic */
     color: rgb(220, 229, 241);
-    padding: 5px;
+    /* Visual */
+    background-color: rgb(138, 154, 170);
+
+}
+
+#message-log,::-webkit-scrollbar {
+    /* Positioning */
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px; 
+    max-height: 400px;
+    min-height: 400px;
+    /* Box model */
+    overflow: auto;
+    display: block;
+    /* Visual */
+    background-color: rgb(138, 154, 170);
 
 }
 
 .computer-message {
-    background-color:rgb(90, 120, 148);
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    /* Positioning */
     margin-top: 15px;
     margin-left: 15px;
     padding: 10px;
     margin-right:10%;
     width: fit-content;
+    /* Box model */
     align-content: left;
+    /* Visual */
+    background-color:rgb(90, 120, 148);
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+
     
 }
 
 .computer-timestamp {
-    background-color: rgb(184, 195, 207);
-    color: rgb(106, 125, 143);
-    border-radius: 15px;
+    /* Positioning */
+    width:fit-content;
     margin-top: -5px;
     margin-left: 20px;
-    padding: 5px;
     margin-right:10%;
-    width:fit-content;
+    padding: 5px;
+    /* Typographic */
     font-size: 10px;
+    color: rgb(106, 125, 143);
+    /* Visual */
+    background-color: rgb(184, 195, 207);
+    border-radius: 15px;
+
+    
 }
 
 .user-message {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color:rgb(64, 158, 130);
+    /* Positioning */
+    width: fit-content;
+    max-width: 400px;
     margin-top:15px;
-    text-align: right;
     margin-left: auto;
     margin-right: 15px;
     padding: 10px;
-    width: fit-content;
-    max-width: 500px;
+    /* Box model */
     align-items: right;
+    /* Typographic */
+    text-align: right;
     word-wrap: break-word;
+    /* Visual */
+    background-color:rgb(64, 158, 130);        
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
 }
 
+
 .user-timestamp {
-    background-color: rgb(184, 195, 207);
-    color: rgb(106, 125, 143);
-    border-radius: 15px;
+    /* Positioning */
+    width:fit-content;
     margin-top: -5px;
     margin-left: auto;
     margin-right: 20px;
     padding: 5px;
-    width:fit-content;
-    font-size: 10px;
+    /* Box model */
     align-items: right;
+    /* Typographic */
+    font-size: 10px;
+    color: rgb(106, 125, 143);
+    /* Visual */  
+    background-color: rgb(184, 195, 207);
+    border-radius: 15px;
+
 }
 
 .user-input-wrapper {
-    background-color: rgb(138, 154, 170);
+    /* Positioning */
+    position: relative;
     min-width: 0;
-    margin-top:-10px;
+    margin-top: -10px;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 20px;
-    position: relative;
+    /* Visual */
+    background-color: rgb(138, 154, 170);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 } 
 
 #user-form{
+    /* Positioning */ 
+    width: 98%;
+    height:min-content;
+    margin-left: 1%;
+    margin-right: 1%; 
+    padding-top: 15px;  
+    /* Box model */
     display:flex;
-    gap: 0.5rem;
-    height: 30px;
-    width: 96%;
-    padding-top: 15px;
-    margin-left: 2%;
-    margin-right: 2%;
+    gap: .5rem;
     align-content:stretch;
+    align-items: center;
+    /* Typographic */
     font-family:'JetBrains Mono', monospace;
 }
 
 
 #user-input {
-    flex-grow: 1;
+    /* Positioning */
     min-width: 0;
-    padding:15px;
+    padding: 5px;
+    /* Box model */ 
+    flex-grow: 1;
+    /* Typographic */
     font-family:'JetBrains Mono', monospace;
     color: rgb(75, 100, 122);
+    /* Visual */
+    background-color: rgb(184, 195, 207);
     border-color: transparent;
     border-radius: 10px;
-    background-color: rgb(184, 195, 207);
     outline:none;
 }
 
 #submit {
-    font-family:'JetBrains Mono', monospace;
+    /* Positioning */
+    padding: 5px;
+    /* Box model */
     flex-shrink: 1;
+    /* Typographic */
+    font-family:'JetBrains Mono', monospace;
     color: rgb(220, 229, 241);
-    height: 32px;
+    /* Visual */
+    background-color:rgb(64, 158, 130);
     border-color: transparent;
     border-radius: 10px;
-    background-color:rgb(64, 158, 130);
+
 }
 
 /*https://www.w3schools.com/howto/howto_css_animate_buttons.asp*/
 
 #submit:hover {
+    /* Visual */
     background-color: rgb(57, 145, 115);
-}
-
-#submit:hover  {
-  background-color: rgb(57, 145, 115);
-  transform: translateY(2px);
+    /* Misc */
+    transform: translateY(2px);
 }
 
 footer {
-    position:fixed;
-    margin-top: 15px;
-    bottom:0%;
+    /* Positioning */
+    position:relative;
     width: 100%;
+    margin-top: 15px;
+    bottom: 0;
+    /* Box model */
+    display: block;
+    clear:both;
+    /* Typographic */
     font-size: 9px;
     text-align: center;
-    display: block;
-    position: relative;
-    clear:both;
+
 }
 
