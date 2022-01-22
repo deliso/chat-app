@@ -116,7 +116,8 @@ body {
 }
 
 .user-input-wrapper {
-    background-color: rgb(138, 154, 170);;
+    background-color: rgb(138, 154, 170);
+    min-width: 0;
     margin-top:-10px;
     margin-left: 10%;
     margin-right: 10%;
@@ -141,6 +142,7 @@ body {
 
 #user-input {
     flex-grow: 1;
+    min-width: 0;
     padding:15px;
     font-family:'JetBrains Mono', monospace;
     color: rgb(75, 100, 122);
@@ -152,6 +154,7 @@ body {
 
 #submit {
     font-family:'JetBrains Mono', monospace;
+    flex-shrink: 1;
     color: rgb(220, 229, 241);
     height: 32px;
     border-color: transparent;
