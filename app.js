@@ -205,8 +205,8 @@ $(document).ready(function() {
          }
 });
 
-input.onfocus = function () {
+$("form").focus(function () {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     scrollToBottom();
-}
+});
