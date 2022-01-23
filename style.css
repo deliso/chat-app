@@ -209,12 +209,10 @@ body {
 
 .user-input-wrapper {
     /* Positioning */
-    position: sticky;
-    bottom: 20vh;;
+    position: relative;
     min-width: 0;
     margin-top: 0px;
     padding-bottom: 20px;
-    bottom: 15vh;
     overflow: auto;
     clear: both;
     /* Visual */
@@ -225,7 +223,6 @@ body {
 
 #user-form {
     /* Positioning */ 
-    position:sticky;
     width: 98%;
     height:min-content;
     margin-left: 1%;
@@ -290,7 +287,7 @@ body {
 
 footer {
     /* Positioning */
-    position:absolute;
+    position:relative;
     width: 100%;
     margin-top: 15px;
     padding-top: 5px;
