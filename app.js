@@ -28,7 +28,8 @@ function displayWelcomePage() {
             .html(getCurrentDate());
         $("#session-date-wrapper").append(sessionDate);
     };
-
+    
+    //Pending refactoring
     let lsArr = [];
     function displayLocalStorage() { //Attribution: https://www.youtube.com/watch?v=LfeOLVGHiXI&t=607s
 
@@ -198,14 +199,14 @@ function runChat() {
 displayWelcomePage();
 runChat();
 
+//In progress
+// $(document).ready(function() {
+//     document.ontouchmove = function(e){
+//          e.preventDefault();
+//          }
+// });
 
-$(document).ready(function() {
-    document.ontouchmove = function(e){
-         e.preventDefault();
-         }
-});
-
-$("form").focus(function () {
+$("form #user-input").focus(function () {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     scrollToBottom();
