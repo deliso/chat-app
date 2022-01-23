@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&display=swap');
 
+:root {
+    --main-font-color: rgb(220, 229, 241);
+}
 
 
 body {
@@ -12,7 +15,7 @@ body {
     /* Typographic */
     font-family:'JetBrains Mono', monospace;
     font-size: 13px;
-    color: rgb(220, 229, 241);
+    color: var(--main-font-color);
     /* Visual */
     background-color: rgb(115, 129, 143);
 
@@ -104,24 +107,9 @@ body {
 
 }
 
-#clear-chat {
-    /* Positioning */
-    margin-right: 15px;
-    padding: 5px;
-    /* Box model */
-    flex-shrink: 1;
-    /* Typographic */
-    font-family:'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: rgb(220, 229, 241);
-    /* Visual */
-    background-color:rgb(76, 131, 182);
-    border-color: transparent;
-    border-radius: 10px;
 
-}
 
-#message-log,::-webkit-scrollbar {
+#message-log {
     /* Positioning */
     position: relative;
     padding-top: 15px;
@@ -132,7 +120,11 @@ body {
     overflow: auto;
     /* Visual */
     background-color: rgb(138, 154, 170);
+}
 
+::-webkit-scrollbar {
+    /* Visual */
+    background-color: rgb(138, 154, 170);
 }
 
 .computer-message {
@@ -254,18 +246,8 @@ body {
 }
 
 #submit {
-    /* Positioning */
-    padding: 5px;
-    /* Box model */
-    flex-shrink: 1;
-    /* Typographic */
-    font-family:'JetBrains Mono', monospace;
-    color: rgb(220, 229, 241);
     /* Visual */
     background-color:rgb(64, 158, 130);
-    border-color: transparent;
-    border-radius: 10px;
-
 }
 
 /*https://www.w3schools.com/howto/howto_css_animate_buttons.asp*/
@@ -303,3 +285,19 @@ footer {
 
 }
 
+.basic-button {
+    padding: 5px;
+    flex-shrink: 1;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: rgb(220, 229, 241);
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+#clear-chat {
+    /* Positioning */
+    margin-right: 15px;
+    /* Visual */
+    background-color:rgb(76, 131, 182);
+}
