@@ -21,6 +21,9 @@ body {
 #app-name {
     /* Positioning */
     text-align: center;
+    padding: 5px;
+    /* Typographic */
+    font-size: 20px;
 }
 
 #chat-wrapper {
@@ -131,11 +134,11 @@ body {
 
 .computer-message {
     /* Positioning */
+    width: fit-content;
     margin-top: 15px;
     margin-left: 15px;
-    padding: 10px;
     margin-right:10%;
-    width: fit-content;
+    padding: 10px;
     /* Box model */
     align-content: left;
     /* Visual */
@@ -165,13 +168,12 @@ body {
 .user-message {
     /* Positioning */
     width: fit-content;
-    max-width: 400px;
     margin-top:15px;
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 15px;
     padding: 10px;
     /* Box model */
-    align-items: right;
+    align-content: right;
     /* Typographic */
     text-align: right;
     word-wrap: break-word;
