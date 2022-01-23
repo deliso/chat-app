@@ -60,6 +60,22 @@ body {
 
 }
 
+#clear-chat {
+    /* Positioning */
+    padding: 5px;
+    /* Box model */
+    flex-shrink: 1;
+    /* Typographic */
+    font-family:'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgb(220, 229, 241);
+    /* Visual */
+    background-color:rgb(76, 131, 182);
+    border-color: transparent;
+    border-radius: 10px;
+
+}
+
 #message-log,::-webkit-scrollbar {
     /* Positioning */
     position: relative;
@@ -220,6 +236,13 @@ body {
 #submit:hover {
     /* Visual */
     background-color: rgb(57, 145, 115);
+    /* Misc */
+    transform: translateY(2px);
+}
+
+#clear-chat:hover {
+    /* Visual */
+    background-color: rgb(69, 116, 160);
     /* Misc */
     transform: translateY(2px);
 }

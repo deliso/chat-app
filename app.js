@@ -6,6 +6,10 @@ function getCurrentTime() {
     return`${timestamp.getHours()}:${minutes}h`;
 }
 
+function scrollToBottom() { //Attribution: https://stackoverflow.com/questions/2346011/how-do-i-scroll-to-an-element-within-an-overflowed-div
+    $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top);
+};
+
 function displayWelcomePage() {
 
     function getCurrentDate() {
@@ -25,20 +29,85 @@ function displayWelcomePage() {
         $("#session-date-wrapper").append(sessionDate);
     };
 
+    let lsArr = [];
+    function displayLocalStorage() { //Attribution: https://www.youtube.com/watch?v=LfeOLVGHiXI&t=607s
+
+        for(let i=0;i<localStorage.length;i++) {
+            lsArr.push(localStorage.key(i));
+
+        }
+        
+        let orderedLsArr = lsArr.sort();
+
+        for(let i=0;i<localStorage.length;i++) {
+            
+            const lsKey = orderedLsArr[i];
+            const lsValue = JSON.parse(localStorage.getItem(lsKey));
+            let lsMessage = $("<div>");
+            let lsTimestamp = $("<div>");
+            if (lsValue.class === "ls-user") {
+                lsMessage
+                    .html(lsValue.message)
+                    .addClass("user-message")
+                lsTimestamp
+                    .html(lsValue.timestamp)
+                    .addClass("user-timestamp")
+                setTimeout(function() {
+                    $("#end-of-messages-wrapper").before($(lsMessage));
+                    $("#end-of-messages-wrapper").before($(lsTimestamp));
+                }, 1000)
+            } if (lsValue.class === "ls-computer") {
+                lsMessage
+                    .html(lsValue.message)
+                    .addClass("computer-message")
+                lsTimestamp
+                    .html(lsValue.timestamp)
+                    .addClass("computer-timestamp")
+                setTimeout(function() {
+                    $("#end-of-messages-wrapper").before($(lsMessage));
+                    $("#end-of-messages-wrapper").before($(lsTimestamp));
+                }, 1000)
+            }
+        };
+
+    };
+
     function displayWelcomeMsg() { 
         
         let welcomeMsg = $("<div>");
         let welcomeTimeMsg = $("<div>");
-        welcomeMsg.html("Tell me, O Muse, of the man of many devices, who wandered full many ways after he had sacked the sacred citadel of Troy.");
-        welcomeTimeMsg.html(getCurrentTime());
-        setTimeout(function() {
-            $("#welcome-message").append(welcomeMsg);
-            $("#welcome-timestamp").append(welcomeTimeMsg)
-        }, 1000)
+        welcomeMsg
+            .addClass("computer-message")    
+            .html("Tell me, O Muse, of the man of many devices, who wandered full many ways after he had sacked the sacred citadel of Troy.");
+        welcomeTimeMsg
+            .addClass("computer-timestamp") 
+            .html(getCurrentTime());
+        $("#end-of-messages-wrapper").before($(welcomeMsg));
+        $("#end-of-messages-wrapper").before($(welcomeTimeMsg))
+        let date = new Date();
+        localStorage.setItem(date.getTime(),
+            JSON.stringify({class: "ls-computer", message: "Tell me, O Muse, of the man of many devices, who wandered full many ways after he had sacked the sacred citadel of Troy.", timestamp: `${getCurrentTime()}`}))
+    };
+
+    function deleteChatHistory() {
+        $("#clear-chat").click(function() {
+           localStorage.clear();
+            location.reload();
+        })
     };
 
     displaySessionDate();
-    displayWelcomeMsg();
+    deleteChatHistory();
+    
+    if(localStorage.length > 0) {
+        displayLocalStorage();
+    } else {
+        displayWelcomeMsg();
+    }
+
+    setTimeout(scrollToBottom,1000);
+    
+    
 };
 
 function runChat() {
@@ -68,6 +137,9 @@ function runChat() {
                     .html(getCurrentTime());
                 $("#end-of-messages-wrapper").before($(newUserMsg));
                 $("#end-of-messages-wrapper").before($(newUserTime));
+                let date = new Date();
+                localStorage.setItem(date.getTime(),
+                    JSON.stringify({class: "ls-user", message: `${getUserInput(element)}`, timestamp: `${getCurrentTime()}`}))
             };
 
             // Resets form input on submit
@@ -103,12 +175,12 @@ function runChat() {
                     .html(getCurrentTime()); 
                 $("#end-of-messages-wrapper").before($(newComputerMsg));
                 $("#end-of-messages-wrapper").before($(newComputerTime));
+                let date = new Date();
+                localStorage.setItem(date.getTime(),
+                    JSON.stringify({class: "ls-computer", message: `${computerRandomText}`, timestamp: `${getCurrentTime()}`}))
+            
             };
             
-            
-            function scrollToBottom() { //Attribution: https://stackoverflow.com/questions/2346011/how-do-i-scroll-to-an-element-within-an-overflowed-div
-                $("#message-log").scrollTop($("#message-log").scrollTop() + $("#end-of-messages-wrapper").position().top);
-            };
             
             if (getUserInput(this) !== "") {                
                 displayUserMsg(this);
