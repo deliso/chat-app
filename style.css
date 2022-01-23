@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&display=swap');
 
+
+
 body {
+    /* Positioning */
+    margin-top:0;
+    margin-bottom: 0;
+    margin-left:0;
+    margin-right: 0;
+    height: 90vh;
     /* Typographic */
     font-family:'JetBrains Mono', monospace;
     font-size: 13px;
@@ -15,6 +23,45 @@ body {
     text-align: center;
 }
 
+#chat-wrapper {
+    /* Positioning */
+    position: relative;
+    width: 100%;
+    /* Visual */
+    background-color: rgb(138, 154, 170);
+}
+
+@media only screen and (min-width: 800px) {
+    #chat-wrapper {
+        /* Positioning */
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        /* Visual */
+        border-radius: 10px;
+    }
+    #computer-name {
+        /* Visual */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+
+#computer-name {
+    /* Positioning */
+    padding: 5px;
+    /* Box model */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem; 
+    /* Typographic */
+    font-size: 15px;
+    /* Visual */
+    background-color: rgb(78, 107, 134);
+}
+
 #profile-picture {
     /* Positioning */
     padding-left: 5px;
@@ -26,29 +73,20 @@ body {
 
 }
 
-#computer-name {
+#profile-name {
     /* Positioning */
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-left: 5px;
     /* Box model */
-    display: flex;
     align-items: center;
-    gap: 1rem; 
+    flex-grow: 1;
     /* Typographic */
     font-size: 15px;
-    /* Visual */
-    background-color: rgb(78, 107, 134);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    text-align: left;
+
 }
 
 #session-date-wrapper {
     /* Positioning */
-    margin-left: 10%;
-    margin-right: 10%;
     padding: 5px;
     /* Box model */
     display: flex;
@@ -62,6 +100,7 @@ body {
 
 #clear-chat {
     /* Positioning */
+    margin-right: 15px;
     padding: 5px;
     /* Box model */
     flex-shrink: 1;
@@ -79,15 +118,12 @@ body {
 #message-log,::-webkit-scrollbar {
     /* Positioning */
     position: relative;
-    margin-left: 10%;
-    margin-right: 10%;
     padding-top: 15px;
     padding-bottom: 15px; 
-    max-height: 400px;
-    min-height: 400px;
+    max-height: 50vh;
+    min-height: 50vh;
     /* Box model */
     overflow: auto;
-    display: block;
     /* Visual */
     background-color: rgb(138, 154, 170);
 
@@ -107,8 +143,6 @@ body {
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-
-
     
 }
 
@@ -125,7 +159,6 @@ body {
     /* Visual */
     background-color: rgb(184, 195, 207);
     border-radius: 15px;
-
     
 }
 
@@ -135,7 +168,7 @@ body {
     max-width: 400px;
     margin-top:15px;
     margin-left: auto;
-    margin-right: 15px;
+    margin-right: 10px;
     padding: 10px;
     /* Box model */
     align-items: right;
@@ -174,9 +207,7 @@ body {
     position: relative;
     min-width: 0;
     margin-top: -10px;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     /* Visual */
     background-color: rgb(138, 154, 170);
     border-bottom-left-radius: 10px;

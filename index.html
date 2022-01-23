@@ -12,25 +12,28 @@
   <main>
     <!-- App name -->
     <div id="app-name"><h1>Odyssey &#127761</h1></div>
-    <div id="computer-name">
-      <div id="profile-picture">🧔🏽</div>
-        <p><strong>Homer of Khíos</strong></p>
-        <button id="clear-chat"> Clear Chat </button>
-    </div>
-    <!-- Session date -->
-    <div id="session-date-wrapper"></div>
-    <!-- Message log -->
-    <div id="message-log">
-      <!-- Other messages appended here -->
-      <div id="end-of-messages-wrapper"></div>
-    </div>
-
-    <!-- User messages form -->
-    <div class="user-input-wrapper">
-      <form id="user-form" action="">
-        <input type="text" name="user-input" id="user-input"></input>
-        <input type="submit" value="Send" name="submit" id="submit">
-      </form>
+    <!-- Chat -->
+    <div id=chat-wrapper>
+      <!-- Computer name  -->
+      <div id="computer-name">
+        <div id="profile-picture">🧔🏽</div>
+          <div id="profile-name"><strong>Homer of Khíos</strong></div>
+          <button id="clear-chat"> Clear </button>
+      </div>
+      <!-- Session date -->
+      <div id="session-date-wrapper"></div>
+      <!-- Message log -->
+      <div id="message-log">
+        <!-- Messages appended here -->
+        <div id="end-of-messages-wrapper"></div>
+      </div>
+      <!-- User messages form -->
+      <div class="user-input-wrapper">
+        <form id="user-form" action="">
+          <input type="text" name="user-input" id="user-input"></input>
+          <input type="submit" value="Send" name="submit" id="submit">
+        </form>
+      </div>
     </div>
   </main>
   <!-- Footer -->
