@@ -30,6 +30,9 @@ body {
     /* Positioning */
     position: relative;
     width: 100%;
+    /* Box model */
+    display: flex;
+    flex-direction: column;
     /* Visual */
     background-color: rgb(138, 154, 170);
 }
@@ -123,9 +126,8 @@ body {
     position: relative;
     padding-top: 15px;
     padding-bottom: 15px; 
-    height: 50vh;
     max-height: 50vh;
-    min-height: 0;
+    min-height: 50vh;
     /* Box model */
     overflow: auto;
     /* Visual */
@@ -207,18 +209,23 @@ body {
 
 .user-input-wrapper {
     /* Positioning */
-    position: relative;
+    position: sticky;
+    bottom: 20vh;;
     min-width: 0;
-    margin-top: -10px;
-    padding-bottom: 10px;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    bottom: 15vh;
+    overflow: auto;
+    clear: both;
     /* Visual */
     background-color: rgb(138, 154, 170);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 } 
 
-#user-form{
+#user-form {
     /* Positioning */ 
+    position:sticky;
     width: 98%;
     height:min-content;
     margin-left: 1%;
@@ -283,16 +290,20 @@ body {
 
 footer {
     /* Positioning */
-    position:relative;
+    position:absolute;
     width: 100%;
     margin-top: 15px;
+    padding-top: 5px;
     bottom: 0;
+    overflow: auto;
     /* Box model */
     display: block;
     clear:both;
     /* Typographic */
     font-size: 9px;
     text-align: center;
+    /* Visual */
+    background-color:rgb(115, 129, 143);
 
 }
 

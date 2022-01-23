@@ -197,5 +197,3 @@ function runChat() {
 
 displayWelcomePage();
 runChat();
-
-//General scroll function (in progress) --> scrollToMessageElement($messageElement)
