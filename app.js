@@ -208,9 +208,9 @@ runChat();
 
 $("form #user-input").focus(function () {
     setTimeout( function(){
-    window.scrollTo(0, 0),
-    document.body.scrollTop = 0,
-    scrollToBottom(),
+    // window.scrollTo(0, 0)
+    // document.body.scrollTop = 0
+    scrollToBottom()
     console.log("focus pocus")
     }
 , 2000)});
