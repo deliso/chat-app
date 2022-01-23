@@ -123,8 +123,9 @@ body {
     position: relative;
     padding-top: 15px;
     padding-bottom: 15px; 
+    height: 50vh;
     max-height: 50vh;
-    min-height: 50vh;
+    min-height: 0;
     /* Box model */
     overflow: auto;
     /* Visual */
