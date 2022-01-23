@@ -214,7 +214,6 @@ body {
     margin-top: 0px;
     padding-bottom: 20px;
     overflow: auto;
-    clear: both;
     /* Visual */
     background-color: rgb(138, 154, 170);
     border-bottom-left-radius: 10px;
