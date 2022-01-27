@@ -103,6 +103,7 @@ body {
 
 .user-message {
     width: fit-content;
+    max-width: 90%;
     margin-top:15px;
     margin-left: auto;
     padding: 10px;
