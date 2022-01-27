@@ -30,9 +30,7 @@ let helperFunctions = {
 
 function initializeChat() {
 
-    let localStorageArr = [];
-
-    function displaySessionDate() {
+   function displaySessionDate() {
         let sessionDate = $("<div>");
         sessionDate
             .addClass("session-date")    
@@ -43,8 +41,9 @@ function initializeChat() {
     function displayChatHistory() { //Attribution: https://www.youtube.com/watch?v=LfeOLVGHiXI&t=607s
 
         // In case localStorage needs to be used for other purposes, only the keys with the "message-" prefix get pushed to the array.
+        let localStorageArr = [];
         for(let i=0;i<localStorage.length;i++) {
-            
+
             if(localStorage.key(i).startsWith("message-")) {
                 localStorageArr.push(localStorage.key(i)); 
             };
@@ -117,7 +116,7 @@ function initializeChat() {
     displaySessionDate();
     clearChatHistory();
     
-    if(localStorageArr.length > 0) {
+    if(localStorage.length > 0) {
         displayChatHistory();
     } else {
         displayWelcomeMsg();

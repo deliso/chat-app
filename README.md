@@ -1,7 +1,9 @@
 
+**Codeworks Coding Assingment - January 2022**
+
 Odyssey is a simple chat application using HTML, CSS, JavaScript and jQuery.
 
-It’s a page that opens in the browser, and shows the messages in colored bubbles (like WhatsApp).
+It’s a page that opens in the browser, and shows the messages in colored bubbles (like WhatsApp, but with an Ancient Greece flavour).
 
 I used 3 separate files: one for CSS, one for HTML, and one for JavaScript and jQuery.
 
