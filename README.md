@@ -1,5 +1,5 @@
 
-**Codeworks Coding Assingment - January 2022**
+##Codeworks Coding Assingment - January 2022
 
 Odyssey is a simple chat application using HTML, CSS, JavaScript and jQuery.
 
